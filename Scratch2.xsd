@@ -1,0 +1,26 @@
+<xsd:schema
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:sql="urn:schemas-microsoft-com:mapping-schema">
+	<xsd:simpleType name="OrderAmountFloat" >
+		<xsd:restriction base="xsd:float" >
+			<xsd:minExclusive value="1.0" />
+			<xsd:maxInclusive value="5000.0" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="Orders">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Order" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+						<xsd:element name="OrderId" type="xsd:int" />
+						<xsd:element name="CustomerId" type="xsd:int" />
+						<xsd:element name="OrderDate" type="xsd:dateTime" />
+						<xsd:element name="OrderAmount" type="OrderAmountFloat" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

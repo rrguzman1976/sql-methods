@@ -1,0 +1,20 @@
+<Orders>
+	<Order>
+		<OrderId>8</OrderId>
+		<CustomerId>60</CustomerId>
+		<OrderDate>2011-10-10T14:22:27.25-05:00</OrderDate>
+		<OrderAmount>25.90</OrderAmount>
+	</Order>
+	<Order>
+		<OrderId>9</OrderId>
+		<CustomerId>61</CustomerId>
+		<OrderDate>2011-11-10T14:22:27.25-05:00</OrderDate>
+		<OrderAmount>35.90</OrderAmount>
+	</Order>
+	<Order>
+		<OrderId>10</OrderId>
+		<CustomerId>62</CustomerId>
+		<OrderDate>2011-12-10T14:22:27.25-05:00</OrderDate>
+		<OrderAmount>45.90</OrderAmount>
+	</Order>
+</Orders>

@@ -1,0 +1,28 @@
+<Orders>
+	<Order>
+		<OrderId>5</OrderId>
+		<CustomerId>60</CustomerId>
+		<OrderDate>2011-10-10T14:22:27.25-05:00</OrderDate>
+		<OrderAmount>25.90</OrderAmount>
+	</Order>
+	<Order>
+		<OrderId>6</OrderId>
+		<CustomerId>61</CustomerId>
+		<OrderDate>2011-11-10T14:22:27.25-05:00</OrderDate>
+		<OrderAmount>35.90</OrderAmount>
+	</Order>
+	<Order>
+		<OrderId>7</OrderId>
+		<CustomerId>62</CustomerId>
+		<OrderDate>2011-12-10T14:22:27.25-05:00</OrderDate>
+		<OrderAmount>45.90</OrderAmount>
+	</Order>
+<!-- TEST SCHEMA VALIDATION	
+	<Order>
+		<OrderId>5</OrderId>
+		<CustomerId>6.0</CustomerId>
+		<OrderDate>2011-10-10T14:22:27.25-05:00</OrderDate>
+		<OrderAmount>25.9O</OrderAmount>
+	</Order>
+-->
+</Orders>
