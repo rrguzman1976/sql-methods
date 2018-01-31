@@ -1,4 +1,4 @@
-USE TSQL2012;
+USE ScratchDB;
 GO
 
 /*-----------------------------------------------------
@@ -51,7 +51,7 @@ GO
 
 CREATE ASSEMBLY ExSQLCLR
 AUTHORIZATION dbo
-FROM 'C:\Users\rguzman\Desktop\Personal\IP\NETMethods\ExSQLCLR\bin\Debug\ExSQLCLR.dll'
+FROM 'C:\Users\rguzman\Desktop\Personal\IP_2\NETMethods\ExSQLCLR\bin\Debug\ExSQLCLR.dll'
 WITH PERMISSION_SET = SAFE;
 GO
 
