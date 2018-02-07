@@ -157,6 +157,12 @@
           <AssociatedConnUserName />
           <FullPath>Filtering_TOPPercent.sql</FullPath>
         </FileNode>
+        <FileNode Name="GraphSQL.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>GraphSQL.sql</FullPath>
+        </FileNode>
         <FileNode Name="Grouping_Cube.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
@@ -336,6 +342,12 @@
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Sets_Semantics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLCLR_Agg.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLCLR_Agg.sql</FullPath>
         </FileNode>
         <FileNode Name="SQLCLR_Func.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
