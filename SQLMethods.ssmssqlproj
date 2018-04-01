@@ -3,8 +3,8 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="localhost:ALLORNOTHING\rguzman">
-          <Created>2017-02-18T06:42:08.4872952-06:00</Created>
+        <ConnectionNode Name="localhost:USCORP\RicardoGu">
+          <Created>2017-02-18T07:42:08.4872952-05:00</Created>
           <Type>SQL</Type>
           <Server>localhost</Server>
           <UserName />
@@ -90,6 +90,12 @@
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Dates_FOM.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Dates_Generate.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Dates_Generate.sql</FullPath>
         </FileNode>
         <FileNode Name="Dates_Offset.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
