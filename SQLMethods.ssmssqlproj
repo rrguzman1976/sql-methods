@@ -3,7 +3,7 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="localhost:USCORP\RicardoGu">
+        <ConnectionNode Name="localhost:ALLORNOTHING\rguzman">
           <Created>2017-02-18T07:42:08.4872952-05:00</Created>
           <Type>SQL</Type>
           <Server>localhost</Server>
@@ -288,6 +288,12 @@
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>PivotUn_TSQL.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Primes.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Primes.sql</FullPath>
         </FileNode>
         <FileNode Name="SEC_CrossDBOwnershipChain.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
