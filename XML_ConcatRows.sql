@@ -14,6 +14,14 @@ GO
  *
  *-----------------------------------------------------*/
 
+DECLARE @printout VARCHAR(MAX);
+
+-- No XML
+SELECT	@printout = COALESCE(@printout + ',', '') + [categoryname]
+FROM	[Production].[Categories];
+
+SELECT	@printout AS [Flattened];
+
 -- Concatenate rows into a single column
 SELECT	'Flatten' AS x
 		, STUFF(
