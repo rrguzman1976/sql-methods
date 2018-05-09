@@ -32,13 +32,6 @@ FROM   (
 
 ) AS s(Id, Company, Salary);
 
-SELECT	*
-FROM	Employee
-WHERE	Company = 'A'
-ORDER BY Salary
-;
-GO
-
 SELECT	lo.Id, lo.Company, lo.Salary
 		--, lo.Company, lo.Salary
 		--, CEILING(t.count1 / 2.0)
@@ -76,3 +69,60 @@ HAVING SUM(CASE
 END) >= ABS(SUM(SIGN(Employee.Salary - alias.Salary)))
 ORDER BY MIN(Employee.Id)
 ;
+
+-- "Decompress" version
+ IF OBJECT_ID(N'dbo.Numbers', N'U') IS NOT NULL
+	DROP TABLE Numbers;
+
+SELECT *
+	INTO Numbers
+FROM   (
+       VALUES 
+
+		(0 , 7)
+		, (1 , 1)
+		, (2 , 3)
+		, (3 , 1)
+
+) AS s(Number, Frequency);
+
+WITH seq
+AS
+(
+	SELECT	ROW_NUMBER() OVER (ORDER BY c.object_id) AS row
+	FROM	sys.all_columns AS c
+)
+, nums
+AS
+(
+	SELECT	n.Number, n.Frequency
+			, seq.row AS rowInner
+			, ROW_NUMBER() OVER (ORDER BY n.Number) AS rowOuter
+			, COUNT(*) OVER () AS fullCount
+	FROM	Numbers AS n
+		INNER JOIN seq
+			ON n.Frequency >= seq.row
+)
+SELECT	AVG(n.Number) AS median
+FROM	nums AS n
+WHERE	n.rowOuter = CEILING(n.fullCount / 2.0)
+		OR n.rowOuter = n.fullCount / 2 + 1
+--ORDER BY n.rowOuter, n.rowInner;
+
+-- "A Beautiful mind" version:
+/*
+Suppose number x has frequency of n, and total frequency of other numbers 
+that are on its left is l, on its right is r. The equation becomes: 
+(n+l) - (n+r) = l - r, x is median if l==r, of course.
+
+When l != r, as long as n can cover the difference, x is the median.
+ */
+SELECT	AVG(n.Number) AS median
+FROM	Numbers AS n
+where	n.Frequency >= abs(
+	-- Left side
+	(select sum(Frequency) from Numbers where Number <= n.Number)
+	 -
+	-- Right side
+	(select sum(Frequency) from Numbers where Number >= n.Number)
+						);
