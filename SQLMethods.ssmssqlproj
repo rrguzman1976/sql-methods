@@ -3,7 +3,7 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="localhost:ALLORNOTHING\rguzman">
+        <ConnectionNode Name="localhost:USCORP\RicardoGu">
           <Created>2017-02-18T07:42:08.4872952-05:00</Created>
           <Type>SQL</Type>
           <Server>localhost</Server>
@@ -36,6 +36,12 @@
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>AppLocksTxn2.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Blob_Import.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Blob_Import.sql</FullPath>
         </FileNode>
         <FileNode Name="BuiltIn_Conversion.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
