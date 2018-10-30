@@ -30,15 +30,28 @@ GO
 
 -- Blob storage
 /*
+SELECT	*
+FROM	sys.symmetric_keys
+WHERE	name = N'##MS_DatabaseMasterKey##'
+
 CREATE MASTER KEY ENCRYPTION BY PASSWORD = '[hahahaha!]';
  
-DROP DATABASE SCOPED CREDENTIAL PEPMUpload;
+IF EXISTS (	SELECT	*
+			FROM	sys.external_data_sources
+			WHERE	name = N'PEPMInvoices')
+	DROP EXTERNAL DATA SOURCE PEPMInvoices;
+GO
+
+IF EXISTS (SELECT	*
+			FROM	sys.database_scoped_credentials
+			WHERE	name = N'PEPMUpload')
+	DROP DATABASE SCOPED CREDENTIAL PEPMUpload;
+GO
 
 CREATE DATABASE SCOPED CREDENTIAL PEPMUpload
 WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
-SECRET = '[Everything after the question mark!]';
-
-DROP EXTERNAL DATA SOURCE PEPMInvoices;
+SECRET = '[Waaaaaahaaahahaha!!!]';
+GO
 
 CREATE EXTERNAL DATA SOURCE PEPMInvoices
 WITH  (
@@ -47,6 +60,7 @@ WITH  (
     CREDENTIAL = PEPMUpload
 );
 */
+
 SELECT	'From Azure Blob as CLOB!',
 		* 
 FROM	OPENROWSET(BULK N'MyExample.csv'
@@ -61,6 +75,7 @@ FROM	OPENROWSET(BULK N'MyExample.csv'
 				, DATA_SOURCE = N'PEPMInvoices'
 				, FORMATFILE = N'CSVImport-c.xml'
 				, FORMATFILE_DATA_SOURCE = N'PEPMInvoices'
+				--, MAXERRORS = 10
 				--, ERRORFILE = N'MyExample.err'
 				--, ERRORFILE_DATASOURCE = N'PEPMInvoices'
 				, FIRSTROW = 2
