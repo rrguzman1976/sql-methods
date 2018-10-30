@@ -15,3 +15,8 @@ GO
 SELECT	empid, lastname,
 		LEN(lastname) - LEN(REPLACE(lastname, 'e', '')) AS numEoccur
 FROM	HR.Employees;
+
+-- Count multichar occurrences.
+SELECT	empid, lastname,
+		(LEN(lastname) - LEN(REPLACE(lastname, 'gopy', '')))/len('gopy') AS numEoccur
+FROM	HR.Employees;

@@ -1,0 +1,9 @@
+USE ScratchDB;
+
+SELECT	*
+from	emp
+-- Sort on SAL if JOB = SALESMAN, ELSE sort on COMM
+ORDER BY CASE
+			WHEN JOB = 'SALESMAN' THEN COMM
+			ELSE SAL
+		END

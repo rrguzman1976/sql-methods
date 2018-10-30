@@ -3,7 +3,7 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="localhost:USCORP\RicardoGu">
+        <ConnectionNode Name="localhost:ALLORNOTHING\rguzman">
           <Created>2017-02-18T07:42:08.4872952-05:00</Created>
           <Type>SQL</Type>
           <Server>localhost</Server>
@@ -120,6 +120,12 @@
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>DefensiveTSQL.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DML_Dedup.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DML_Dedup.sql</FullPath>
         </FileNode>
         <FileNode Name="DML_NoGapSeq.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
@@ -247,12 +253,6 @@
           <AssociatedConnUserName />
           <FullPath>Math_Median.sql</FullPath>
         </FileNode>
-        <FileNode Name="Nulls_SortLast.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
-          <AssociatedConnUserName />
-          <FullPath>Nulls_SortLast.sql</FullPath>
-        </FileNode>
         <FileNode Name="NumGen_Digits.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
@@ -306,6 +306,12 @@
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Primes.sql</FullPath>
+        </FileNode>
+        <FileNode Name="RandSelectN.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>RandSelectN.sql</FullPath>
         </FileNode>
         <FileNode Name="SEC_CrossDBOwnershipChain.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
@@ -366,6 +372,18 @@
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Sets_Semantics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Sort_ConditionalCols.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Sort_ConditionalCols.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Sort_NullsLast.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Sort_NullsLast.sql</FullPath>
         </FileNode>
         <FileNode Name="SQLCLR_Agg.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
@@ -492,6 +510,12 @@
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>TableExpressions_TOPExpression.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TranslateFunc.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>TranslateFunc.sql</FullPath>
         </FileNode>
         <FileNode Name="TriggerOnServer.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
