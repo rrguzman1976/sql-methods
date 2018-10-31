@@ -20,3 +20,12 @@ SELECT	orderid, custid, val,
 FROM	Sales.OrderValues AS O1
 ORDER BY custid, orderid;
 
+-- Exclude high and low!
+USE ScratchDB;
+
+select avg(sal)
+ from emp
+where sal not in (
+   (select min(sal) from emp),
+   (select max(sal) from emp)
+)

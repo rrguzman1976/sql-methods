@@ -1,0 +1,14 @@
+USE ScratchDB;
+GO
+
+DECLARE @year INT = 2018
+DECLARE @start DATETIME2(2) = DATEFROMPARTS(1900, 2, 1)
+
+SELECT	ID
+		, DATEADD(yy, ID, @start)
+		, EOMONTH(DATEADD(yy, ID, @start))
+		, CASE
+			WHEN DATEPART(d, EOMONTH(DATEADD(yy, ID, @start))) = 29 THEN 1
+			ELSE 0
+		END [IsLeapYear]
+FROM	T100;

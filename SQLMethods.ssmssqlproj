@@ -67,6 +67,12 @@
           <AssociatedConnUserName />
           <FullPath>Columns_Sparse.sql</FullPath>
         </FileNode>
+        <FileNode Name="Dates_CheckLeap.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Dates_CheckLeap.sql</FullPath>
+        </FileNode>
         <FileNode Name="Dates_CleanDate.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
@@ -79,11 +85,23 @@
           <AssociatedConnUserName />
           <FullPath>Dates_CleanTime.sql</FullPath>
         </FileNode>
+        <FileNode Name="Dates_CountDays.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Dates_CountDays.sql</FullPath>
+        </FileNode>
         <FileNode Name="Dates_EOM.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Dates_EOM.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Dates_ExcludeWeekends.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Dates_ExcludeWeekends.sql</FullPath>
         </FileNode>
         <FileNode Name="Dates_FindGaps.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
@@ -480,6 +498,18 @@
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Subquery_NOTINNULL.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Subquery_RunningDiff.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Subquery_RunningDiff.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Subquery_RunningProd.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Subquery_RunningProd.sql</FullPath>
         </FileNode>
         <FileNode Name="Subquery_RunningSum.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
