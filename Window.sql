@@ -42,6 +42,13 @@ SELECT orderid, custid, val,
 FROM Sales.OrderValues
 ORDER BY val;
 
+-- DENSE RANK using ANSI SQL
+select (select	count(distinct b.sal) -- notice DISTINCT here
+        from	ScratchDB.dbo.emp AS b
+		where	b.sal <= a.sal) as rnk
+		, a.sal
+from	ScratchDB.dbo.emp a
+
 -- Offset
 SELECT custid, orderid, val,
 		-- No frame
@@ -63,4 +70,26 @@ SELECT custid, orderid, val
 FROM Sales.OrderValues
 ORDER BY custid, orderdate, orderid;
 
+-- NTILE using ANSI SQL
 
+SELECT	*
+		, SUM(cnt) OVER (ORDER BY rn) AS grp
+FROM	(
+	SELECT	e.EMPNO, e.ENAME
+			, CASE
+				WHEN (
+					SELECT	COUNT(*)
+					FROM	EMP AS e2
+					WHERE	e2.EMPNO < e.EMPNO 
+				)%5 = 0 THEN 1
+				ELSE 0
+			END AS cnt
+			, ROW_NUMBER() OVER (ORDER BY EMPNO) AS rn
+	FROM	ScratchDB.dbo.EMP AS e
+) AS x
+
+-- Beautiful
+select	CEILING(row_number() over (order by empno)/5.0) grp,
+		 empno,
+		 ename
+from	ScratchDB.dbo.emp

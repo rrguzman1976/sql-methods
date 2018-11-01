@@ -17,6 +17,17 @@ WHERE	EMPNO NOT IN (SELECT	MIN(EMPNO) -- can keep first or last dup (max) in eac
 					)
 ;
 
+-- Alternative 2
+SELECT	e.EMPNO, e.JOB
+FROM	EMP AS e
+WHERE	EXISTS (
+	SELECT	*
+	FROM	EMP AS e2
+	WHERE	e2.JOB = e.JOB
+			AND e2.EMPNO > e.EMPNO
+)
+ORDER BY JOB;
+
 SELECT	*
 FROM	EMP
 ORDER BY JOB;

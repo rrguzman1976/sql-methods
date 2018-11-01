@@ -46,3 +46,54 @@ SELECT	empid,
 		SUM(CASE WHEN custid = 'D' THEN qty END) AS D
 FROM dbo.Orders
 GROUP BY empid; -- grouping
+
+-- PIVOT non-numeric values
+select	rn
+		, MAX(case when job='CLERK'
+              then ename else null end) as clerks,
+        MAX(case when job='ANALYST'
+              then ename else null end) as analysts,
+        MAX(case when job='MANAGER'
+              then ename else null end) as mgrs,
+        MAX(case when job='PRESIDENT'
+              then ename else null end) as prez,
+        MAX(case when job='SALESMAN'
+                 then ename else null end) as sales
+from	(
+	select	job,
+			ename,
+			row_number()over(partition by job order by ename) rn
+	from	ScratchDB.dbo.emp
+	) x
+group by rn
+ORDER BY rn
+
+-- Crosstab 2
+select	deptno, job, rn_deptno, rn_job,
+	       MAX(case when deptno=10
+	             then ename else null end) as d10,
+	       MAX(case when deptno=20
+	             then ename else null end) as d20,
+	       MAX(case when deptno=30
+	             then ename else null end) as d30,
+	       MAX(case when job='CLERK'
+	             then ename else null end) as clerks,
+	       MAX(case when job='ANALYST'
+	             then ename else null end) as anals,
+	       MAX(case when job='MANAGER'
+	             then ename else null end) as mgrs,
+	       MAX(case when job='PRESIDENT'
+	             then ename else null end) as prez,
+	       MAX(case when job='SALESMAN'
+	                then ename else null end) as sales
+from	(
+		Select deptno,
+			job,
+			ename,
+			row_number()over(partition by job order by ename) rn_job,
+			row_number()over(partition by job order by ename) rn_deptno
+		from ScratchDB.dbo.emp
+	) x
+	 group by deptno, job, rn_deptno, rn_job
+order by deptno, job, rn_deptno, rn_job
+

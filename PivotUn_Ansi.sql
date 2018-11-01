@@ -43,3 +43,22 @@ FROM (SELECT empid, custid,
 			-- Use cross product to duplicate rows for each custid
 			CROSS JOIN (VALUES('A'),('B'),('C'),('D')) AS Custs(custid)) AS D
 WHERE qty IS NOT NULL; -- eliminate null
+
+-- Example 2
+select	dept.deptno
+		--, emp_cnts.*
+		, case dept.deptno
+            when 10 then emp_cnts.deptno_10
+            when 20 then emp_cnts.deptno_20
+            when 30 then emp_cnts.deptno_30
+		end as counts_by_dept
+from (
+	select sum(case when deptno=10 then 1 else 0 end) as deptno_10,
+			sum(case when deptno=20 then 1 else 0 end) as deptno_20,
+			sum(case when deptno=30 then 1 else 0 end) as deptno_30
+	from	ScratchDB.dbo.emp
+    ) AS emp_cnts 
+		-- Use actual departments to spread pivoted rows
+		CROSS JOIN (
+		select deptno from ScratchDB.dbo.dept where deptno <= 30
+	) AS dept
