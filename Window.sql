@@ -70,8 +70,8 @@ SELECT custid, orderid, val
 FROM Sales.OrderValues
 ORDER BY custid, orderdate, orderid;
 
--- NTILE using ANSI SQL
-
+-- Assign fixed size records to groups using ANSI SQL
+-- Not exactly like NTILE. NTILE specifies the number of buckets, not the number of records each will contain.
 SELECT	*
 		, SUM(cnt) OVER (ORDER BY rn) AS grp
 FROM	(
@@ -88,8 +88,22 @@ FROM	(
 	FROM	ScratchDB.dbo.EMP AS e
 ) AS x
 
--- Beautiful
+-- Another way: Beautiful
 select	CEILING(row_number() over (order by empno)/5.0) grp,
 		 empno,
 		 ename
 from	ScratchDB.dbo.emp
+
+-- NTILE implementation using SQL
+DECLARE @BUCKET INT = 4;
+
+SELECT	x.*
+		, NTILE(4) OVER (ORDER BY x.[ntile]) AS ref
+FROM	(
+SELECT	e.EMPNO, e.ENAME
+		, ROW_NUMBER() OVER (ORDER BY e.EMPNO) AS rn
+		, ROW_NUMBER() OVER (ORDER BY e.EMPNO)%@BUCKET+1 AS [ntile]
+FROM	ScratchDB.dbo.EMP AS e
+) AS x
+ORDER BY x.[ntile]
+

@@ -18,3 +18,16 @@ SELECT	orderyear, qty
 			WHERE	O2.orderyear <= O1.orderyear) AS runqty
 FROM	Sales.OrderTotalsByYear AS O1
 ORDER BY orderyear;
+
+-- Example 2, last 90 days:
+SELECT	e.ENAME
+		, e.HIREDATE
+		, e.SAL
+		, (
+			SELECT	SUM(e2.SAL)
+			FROM	ScratchDB.dbo.EMP AS e2
+			WHERE	e2.HIREDATE BETWEEN DATEADD(d, -90, e.HIREDATE)
+					AND e.HIREDATE
+		) AS LAST90
+FROM	ScratchDB.dbo.EMP AS e
+ORDER BY e.HIREDATE;
