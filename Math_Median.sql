@@ -1,6 +1,25 @@
 USE tempdb;
 GO
 
+-- Median salary
+select avg(sal)
+   from (
+ select sal,
+        count(*) over() total,
+        count(*) over()/2.0 mid,
+        CEILING(count(*) over()/2.0) next,
+        row_number() over (order by sal) rn
+   from ScratchDB.dbo.emp
+  where deptno = 20
+        ) x
+ where ( total%2 = 0
+			-- Average middle values
+         and rn in ( mid, mid+1 )
+       )
+    or ( total%2 = 1
+         and rn = next -- middle
+       )
+
 -- Inspiration:
 -- https://sqlperformance.com/2012/08/t-sql-queries/median
 
