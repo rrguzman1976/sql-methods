@@ -157,6 +157,12 @@
           <AssociatedConnUserName />
           <FullPath>DML_FindReciprocal.sql</FullPath>
         </FileNode>
+        <FileNode Name="DML_Hierarchy.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DML_Hierarchy.sql</FullPath>
+        </FileNode>
         <FileNode Name="DML_NoGapSeq.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
