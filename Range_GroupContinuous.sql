@@ -1,6 +1,6 @@
 USE ScratchDB;
 GO
-/*
+--/*
 DROP TABLE IF EXISTS #P;
 
 CREATE TABLE #P
@@ -44,11 +44,14 @@ SELECT	proj_grp, MIN(PROJ_START), MAX(PROJ_END)
 FROM	(
 	SELECT	*
 			-- This does a "running sum" to generate group id's.
+			, SUM(a.flag) OVER (ORDER BY a.PROJ_ID) AS proj_grp
+			/* -- Same as
 			, (
 				SELECT	SUM(b.flag)
 				FROM	V2 AS b
 				WHERE	b.PROJ_ID <= a.PROJ_ID
 			) AS proj_grp
+			*/
 	FROM	V2 AS a
 ) AS x
 GROUP BY proj_grp
