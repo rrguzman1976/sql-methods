@@ -3,7 +3,7 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="localhost:ALLORNOTHING\rguzman">
+        <ConnectionNode Name="localhost:USCORP\RicardoGu">
           <Created>2017-02-18T07:42:08.4872952-05:00</Created>
           <Type>SQL</Type>
           <Server>localhost</Server>
@@ -432,30 +432,6 @@
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Sort_NullsLast.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLCLR_Agg.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
-          <AssociatedConnUserName />
-          <FullPath>SQLCLR_Agg.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLCLR_Func.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
-          <AssociatedConnUserName />
-          <FullPath>SQLCLR_Func.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLCLR_Sproc.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
-          <AssociatedConnUserName />
-          <FullPath>SQLCLR_Sproc.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLCLR_Type.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
-          <AssociatedConnUserName />
-          <FullPath>SQLCLR_Type.sql</FullPath>
         </FileNode>
         <FileNode Name="SSIS_ExecPackage.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:True</AssociatedConnectionMoniker>

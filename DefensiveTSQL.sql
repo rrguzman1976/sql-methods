@@ -61,7 +61,7 @@ CREATE TABLE dbo.TeamMembers
 
 CREATE UNIQUE NONCLUSTERED INDEX TeamLeads 
 	ON dbo.TeamMembers(TeamID) 
-WHERE IsTeamLead='Y' ;
+WHERE IsTeamLead = 'Y' ;
 
 BEGIN TRAN;
 

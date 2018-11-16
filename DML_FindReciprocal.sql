@@ -25,6 +25,9 @@ VALUES (20, 20)
 */
 ;
 
+SELECT	*
+FROM	#R;
+
 -- Find records with reciprocals
 select	distinct v1.*
 from	#R v1, #R v2

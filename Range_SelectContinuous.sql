@@ -1,6 +1,6 @@
 USE ScratchDB;
 GO
-/*
+--/*
 DROP TABLE IF EXISTS #P;
 
 CREATE TABLE #P

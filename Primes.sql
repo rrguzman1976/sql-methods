@@ -1,3 +1,6 @@
+USE ScratchDB;
+GO
+
 -- https://sqlserverfast.com/blog/hugo/2006/09/the-prime-number-challenge-great-waste-of-time/
 -- Beautiful
 DECLARE @Limit INT = 545;
@@ -19,3 +22,19 @@ WHERE	n1.Number > 1
 					AND n2.Number < n1.Number
 					AND n1.Number % n2.Number = 0)
 ;
+GO
+
+-- All primes < 1000
+SELECT	*
+FROM	dbo.Nums AS N
+WHERE	N.n > 1 AND N.n < 545
+		AND NOT EXISTS (
+			SELECT	*
+			FROM	dbo.Nums AS N2
+			WHERE	N2.n > 1 AND N2.n <= SQRT(N.n)
+					AND N.n%N2.n = 0
+		)
+ORDER BY N.n;
+
+
+SELECT 3%2

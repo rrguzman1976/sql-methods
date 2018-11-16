@@ -1,4 +1,4 @@
-USE TSQL2012;
+USE ScratchDB;
 GO
 
 /*-----------------------------------------------------
@@ -16,6 +16,8 @@ GO
 -- Get first day of current month.
 SELECT	DATEADD(
 			month,
-			DATEDIFF(month, '20010101', CURRENT_TIMESTAMP), '20010101')
+			DATEDIFF(month, '20010101', CURRENT_TIMESTAMP)
+			, '20010101') AS FOM1
 		-- OR
-		, dateadd(day, -day(getdate()) + 1, getdate());
+		, dateadd(day, -day(getdate()) + 1, getdate()) AS FOM2
+;
