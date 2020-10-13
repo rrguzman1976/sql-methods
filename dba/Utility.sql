@@ -1,0 +1,27 @@
+USE ScratchDB;
+GO
+
+IF OBJECT_ID(N'dbo.convert_RIDs', N'FN') IS NOT NULL
+	DROP FUNCTION dbo.convert_RIDs;
+GO
+
+CREATE FUNCTION dbo.convert_RIDs (@rid BINARY(8))
+RETURNS VARCHAR(30)
+AS
+BEGIN
+	RETURN (
+		CONVERT (VARCHAR(5),
+		CONVERT(INT, SUBSTRING(@rid, 6, 1)
+		+ SUBSTRING(@rid, 5, 1)) )
+		+ ':' +
+		CONVERT(VARCHAR(10),
+		CONVERT(INT, SUBSTRING(@rid, 4, 1)
+		+ SUBSTRING(@rid, 3, 1)
+		+ SUBSTRING(@rid, 2, 1)
+		+ SUBSTRING(@rid, 1, 1)) )
+		+ ':' +
+		CONVERT(VARCHAR(5),
+		CONVERT(INT, SUBSTRING(@rid, 8, 1)
+		+ SUBSTRING(@rid, 7, 1)) ) )
+END;
+GO
